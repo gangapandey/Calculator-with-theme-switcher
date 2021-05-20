@@ -1,0 +1,269 @@
+/* theme 1 variables */
+:root, html[data-theme='default'] {
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+    --accent-key: hsl(225, 21%, 49%);
+    --accent-key-shadow: hsl(224, 28%, 35%);
+    --equals-key: hsl(6, 63%, 50%);
+    --equals-key-shadow: hsl(6, 70%, 34%);
+    --equals-text: white;
+    --key: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    --text:  hsl(221, 14%, 31%);
+    --attr-text: white;
+    --header-text: white;
+    --num-size: 32px;
+    --bor-rad: 10px;
+}
+html[data-theme="light"] {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+    --accent-key: hsl(185, 42%, 37%);
+    --accent-key-shadow: hsl(185, 58%, 25%);
+    --equals-key: hsl(25, 98%, 40%);
+    --equals-key-shadow: hsl(25, 99%, 27%);
+    --key: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --text:  hsl(60, 10%, 19%);
+    --attr-text: hsl(60, 10%, 19%);
+    --header-text: hsl(60, 10%, 19%);
+}
+
+html[data-theme="dark"] {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+    --accent-key: hsl(281, 89%, 26%);
+    --accent-key-shadow: hsl(285, 91%, 52%);
+    --equals-key: hsl(176, 100%, 44%);
+    --equals-key-shadow: hsl(177, 92%, 70%);
+    --equals-text: hsl(198, 20%, 13%);
+    --key: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+    --text: hsl(52, 100%, 62%);
+    --attr-text: hsl(52, 100%, 62%);
+    --header-text: hsl(52, 100%, 62%);
+}
+
+html {
+    content: "";
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+button {
+    border: none;
+    font-family: 'Spartan', sans-serif;
+    font-size: var(--num-size);
+}
+.calculator {
+    background-color: var(--bg-main);
+    font-family: 'Spartan', sans-serif;
+    min-height: 100vh;
+    min-width: 375px;
+    padding: 3rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+.title, p, .theme-toggle, .screen {
+    color: var(--header-text);
+}
+p {
+    font-size: .75rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-right: 1rem;
+}
+.themes {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.theme-toggle {
+    display: block;
+  
+}
+.theme-numbers {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.theme-number {
+
+    padding: 0 .5rem;
+}
+.toggle-window {
+    background-color: var(--bg-keypad);
+    border-radius: 16px;
+    display: flex;
+    height: 1.5rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.theme {
+    background-color: var(--equals-key);
+    border: none;
+    border-radius: 50%;
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    margin: 5px;
+}
+#light,
+#dark  {
+    background-color: inherit;
+}
+#default {
+    background-color: var(--equals-key);
+}
+
+.screen {
+    background-color: var(--bg-screen);
+    border-radius: var(--bor-rad);
+    font-size: var(--num-size);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    text-align: right;
+    width: 100;
+}
+.keypad {
+    background-color: var(--bg-keypad);
+    border-radius: var(--bor-rad);
+    display: grid;
+    font-size: var(--num-size);
+    grid-gap: 1rem;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    grid-auto-flow: row;
+    padding: 1.5rem;
+    width: 100%;
+}
+.key,
+#del,
+#reset-key,
+#equals-key,
+.operator {
+    border-radius: 5px;
+}
+.key,
+.operator {
+    background-color: var(--key);
+    box-shadow: 0 5px var(--key-shadow);
+    color: var(--text);
+    padding: 1rem 0;
+    text-align: center;
+}
+#del, #reset-key {
+    background-color: var(--accent-key);
+    box-shadow: 0 5px var(--accent-key-shadow);
+    color: white;
+    font-size: 1rem;
+}
+#reset-key {
+    grid-column: 1 / span 2;
+}
+#equals-key {
+    background-color: var(--equals-key);
+    box-shadow: 0 5px var(--equals-key-shadow);
+    color: var(--equals-text);
+    font-size: 1rem;
+    grid-column: 3 / span 2;
+}
+.attribution { 
+    background-color: var(--bg-main);
+    color: var(--equals-key);
+    font-size: 11px; text-align: center;
+    padding-bottom: 2rem;
+    min-width: 375px;
+    width: 100%;
+}
+
+.attribution a { 
+    color: var(--attr-text);
+}
+
+@media (min-width: 700px) {
+    body {
+        background-color: var(--bg-main);
+    }
+    .calculator {
+        max-width: 770px;
+        margin: auto;
+    }
+    .screen {
+        padding: 2rem 1rem;
+    }
+    .keypad {
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+
+    }
+    .key, .operators {
+        padding: 0 3rem;
+    }
+}
+
+@media (prefers-color-scheme: light){
+    :root {
+        --bg-main: hsl(0, 0%, 90%);
+        --bg-keypad: hsl(0, 5%, 81%);
+        --bg-screen: hsl(0, 0%, 93%);
+        --accent-key: hsl(185, 42%, 37%);
+        --accent-key-shadow: hsl(185, 58%, 25%);
+        --equals-key: hsl(25, 98%, 40%);
+        --equals-key-shadow: hsl(25, 99%, 27%);
+        --key: hsl(45, 7%, 89%);
+        --key-shadow: hsl(35, 11%, 61%);
+        --text:  hsl(60, 10%, 19%);
+        --attr-text: hsl(60, 10%, 19%);
+        --header-text: hsl(60, 10%, 19%);
+    }
+
+    #default, #dark {
+        background-color: inherit;
+    }
+    #light {
+       background-color: var(--equals-key);
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --bg-main: hsl(268, 75%, 9%);
+        --bg-keypad: hsl(268, 71%, 12%);
+        --bg-screen: hsl(268, 71%, 12%);
+        --accent-key: hsl(281, 89%, 26%);
+        --accent-key-shadow: hsl(285, 91%, 52%);
+        --equals-key: hsl(176, 100%, 44%);
+        --equals-key-shadow: hsl(177, 92%, 70%);
+        --equals-text: hsl(198, 20%, 13%);
+        --key: hsl(268, 47%, 21%);
+        --key-shadow: hsl(290, 70%, 36%);
+        --text: hsl(52, 100%, 62%);
+        --attr-text: hsl(52, 100%, 62%);
+        --header-text: hsl(52, 100%, 62%);
+    }
+
+    #default, #light {
+        background-color: inherit;
+    }
+    #dark {
+        background-color: var(--equals-key);
+    }
+}

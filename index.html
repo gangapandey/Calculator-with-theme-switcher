@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!--Favicon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!--css link-->
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+  <!--Google Font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+</head>
+
+<body>
+
+  <main class="calculator">
+
+    <div class="header">
+
+      <h1 class="title">calc</h1>
+
+      <div class="themes">
+        <p>THEME</p>
+        <div class="theme-toggle">
+          <div class="theme-numbers">
+            <div id="color-theme1" class="theme-number">1</div>
+            <div id="color-theme2" class="theme-number">2</div>
+            <div id="color-theme3" class="theme-number">3</div>
+          </div>
+
+          <div class="toggle-window">
+            <button id="default" class="theme" on-click="select-theme"></button>
+            <button id="light"   class="theme" on-click="select-theme"></button>
+            <button id="dark"    class="theme" on-click="select-theme"></button>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+
+    <div class="screen">0</div>
+
+    <div class="keypad">
+      <button class="key" on-click="changeScreenNum">7</button>
+      <button class="key" on-click="changeScreenNum">8</button>
+      <button class="key" on-click="changeScreenNum">9</button>
+      <button id = "del" on-click="delete">DEL</button>
+
+      <button class="key" on-click="changeScreenNum">4</button>
+      <button class="key" on-click="changeScreenNum">5</button>
+      <button class="key" on-click="changeScreenNum">6</button>
+      <button class="operator" on-click="addOperator">+</button>
+
+      <button class="key" on-click="changeScreenNum">1</button>
+      <button class="key" on-click="changeScreenNum">2</button>
+      <button class="key" on-click="changeScreenNum">3</button>
+      <button class="operator" on-click="addOperator">-</button>
+
+      <button class="key">.</button>
+      <button class="key" on-click="changeScreenNum">0</button>
+      <button class="operator" on-click="addOperator" >/</button>
+      <button class="operator" on-click="addOperator" >x</button>
+
+      <button id="reset-key" on-click="reset">RESET</button>
+      <button id="equals-key" on-click="sum">=</button>
+    </div>
+
+  </main>
+
+  <!--Js link-->
+  <script src="./js/theme-toggle.js"></script>
+  <script src="./js/script.js"></script>
+  
+
+  <!--Attribution-->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.linkedin.com/in/gangap36/">Ganga Pandey</a>.
+  </div>
+
+</body>
+
+</html>
